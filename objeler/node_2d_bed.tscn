@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://comb78lhduwsx"]
+
+[ext_resource type="Texture2D" uid="uid://bomqammdw5w8e" path="res://resim/pngtree-small-bed-original-design-vector-png-image_6662487.png" id="1_bqcjm"]
+[ext_resource type="Texture2D" uid="uid://c0omhg3oa52sh" path="res://resim/pngtree-blank-white-pillow-generative-ai-png-image_10441762.png" id="2_wtiea"]
+
+[node name="Node2D-bed" type="Node2D"]
+
+[node name="Sprite2D-bed body" type="Sprite2D" parent="."]
+position = Vector2(493, 261)
+texture = ExtResource("1_bqcjm")
+
+[node name="Sprite2D-pilllow" type="Sprite2D" parent="."]
+position = Vector2(449, 232)
+rotation = 0.379527
+scale = Vector2(0.606818, 0.338492)
+texture = ExtResource("2_wtiea")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyoj4ddoilwqr"]
+
+[ext_resource type="Script" uid="uid://btsvv6yly80sg" path="res://objeler/mango.gd" id="1_78cmy"]
+[ext_resource type="Texture2D" uid="uid://bwyhufjhaxp1a" path="res://resim/pngtree-mango-isolated-single-fruit-png-image_9216660.png" id="2_p38t4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kkb1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
+script = ExtResource("1_78cmy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie"]
+scale = Vector2(3.46749, -3.56602)
+shape = SubResource("CircleShape2D_6kkb1")
+
+[node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
+position = Vector2(-0.443036, 1.20401e-05)
+scale = Vector2(0.0531858, 0.06639)
+texture = ExtResource("2_p38t4")
+
+[connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

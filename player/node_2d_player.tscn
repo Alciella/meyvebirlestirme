@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cro0a28a45g3d"]
+
+[ext_resource type="Texture2D" uid="uid://cg45aoqu81qat" path="res://icon.svg" id="1_vhwjw"]
+[ext_resource type="Texture2D" uid="uid://dtuuifyal3nhb" path="res://resim/Red-Laser-PNG-Picture.png" id="2_h3j0r"]
+[ext_resource type="Texture2D" uid="uid://bjj6krkl4jy8e" path="res://resim/kedi.png" id="3_h3j0r"]
+
+[node name="Node2D-player" type="Node2D"]
+
+[node name="Sprite2D-player" type="Sprite2D" parent="."]
+position = Vector2(213, 264)
+texture = ExtResource("1_vhwjw")
+
+[node name="Sprite2D-laser" type="Sprite2D" parent="Sprite2D-player"]
+position = Vector2(145, -23)
+rotation = -2.87281
+scale = Vector2(0.2, 0.2)
+skew = 0.558505
+texture = ExtResource("2_h3j0r")
+
+[node name="Sprite2D-kedi" type="Sprite2D" parent="Sprite2D-player"]
+position = Vector2(292, -37)
+scale = Vector2(0.048916, 0.0551262)
+texture = ExtResource("3_h3j0r")
