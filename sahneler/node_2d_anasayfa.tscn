@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://4tjnhrjpoexd"]
+[gd_scene load_steps=11 format=3 uid="uid://4tjnhrjpoexd"]
 
 [ext_resource type="Script" uid="uid://bcgchrrd542jj" path="res://sahneler/anasayfa.gd" id="1_dqsuy"]
 [ext_resource type="Texture2D" uid="uid://by4vp1vdf2leu" path="res://resim/arkaplan.jpeg" id="1_w0f5j"]
 [ext_resource type="FontFile" uid="uid://5cukdot7egtp" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_gx2g6"]
 [ext_resource type="Texture2D" uid="uid://c1ufmtcc8dvcq" path="res://resim/antique-wood-plank-texture-background-on-transparent-file-png.webp" id="5_dqsuy"]
 [ext_resource type="Script" uid="uid://cu4bim4hlci3t" path="res://sahneler/oyunbitiş.gd" id="5_hwbm0"]
+[ext_resource type="Texture2D" uid="uid://cg84auysu5jqd" path="res://resim/cross.png" id="6_6gd66"]
+[ext_resource type="PackedScene" uid="uid://dba42u5r715s4" path="res://control.tscn" id="6_hwbm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7kny"]
 size = Vector2(20.9453, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx2g6"]
 size = Vector2(130, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6domj"]
+texture = ExtResource("6_6gd66")
 
 [node name="Node2D-anasayfa" type="Node2D"]
 scale = Vector2(1, 0.99451)
@@ -80,4 +85,23 @@ position = Vector2(581, 111.613)
 scale = Vector2(8.11668, 1.2197)
 shape = SubResource("RectangleShape2D_gx2g6")
 
+[node name="exit_button" type="Button" parent="."]
+offset_left = 1004.0
+offset_top = 135.745
+offset_right = 1012.0
+offset_bottom = 143.745
+scale = Vector2(10, 10)
+theme_override_styles/focus = SubResource("StyleBoxTexture_6domj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6domj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6domj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6domj")
+
+[node name="Control" parent="." instance=ExtResource("6_hwbm0")]
+visible = false
+offset_left = 584.0
+offset_top = 342.882
+offset_right = 584.0
+offset_bottom = 342.882
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
