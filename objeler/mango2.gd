@@ -4,6 +4,7 @@ var pos: Vector2 =Vector2.ZERO
 var düşme=false
 const boyut= 640
 var çarpışma=0
+var donma=Counter.düşmez
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,10 +16,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	pass
 			
 		
 func _physics_process(delta: float) -> void:
+	var donma=Counter.düşmez
+	freeze=donma
+	
 	contact_monitor=true
 	max_contacts_reported=4
 	if düşme==false:

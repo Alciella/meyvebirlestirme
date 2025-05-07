@@ -1,6 +1,6 @@
 extends Node2D
 var sayaç=0.0
-var beklemesürei=0.3
+var beklemesürei=1
 var count=0
 var puan: int = 0
 @onready var devamiste = $Control
@@ -17,15 +17,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if get_global_mouse_position().x<50:
+		Input.warp_mouse(Vector2(50, get_global_mouse_position().y)) 
+	if get_global_mouse_position().x>1100:
+		Input.warp_mouse(Vector2(1100, get_global_mouse_position().y)) 
+	if get_global_mouse_position().y>600:
+		Input.warp_mouse(Vector2(get_global_mouse_position().x,600)) 
+		
 	if puan>Counter.puan:
 		Counter.puan=puan
 	sayaç=sayaç-delta
 	if Input.is_action_just_released("soltik") and sayaç<=0:
 		sayaç=beklemesürei
-		count=count+1
-		
 		var meyve=meyveler[randi()%meyveler.size()].instantiate()
 		add_child(meyve)
+		
 		
 	if Input.is_action_just_released("esc"):
 		get_tree().change_scene_to_file("res://sahneler/main menu.tscn")
@@ -33,11 +39,12 @@ func _process(delta: float) -> void:
 
 func _on_exit_button_pressed() -> void:
 	$Control.show()
+	Counter.düşmez=true
 	
 func devamla():
 	print("oldu")
 	$Control.hide()
-	get_tree().paused = false
+	Counter.düşmez=false
 	
 func cıkıldı():
 	print("çalıştı")

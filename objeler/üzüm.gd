@@ -7,6 +7,7 @@ var dönme=90
 var düşme=true
 const boyut=20
 var çarpışma=0
+var donma=Counter.düşmez
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var donma=Counter.düşmez	
 
+	
 	if düşme:
 		if Input.is_action_pressed("soltik"):
 			pos.x=get_global_mouse_position().x
@@ -31,6 +34,8 @@ func _process(delta: float) -> void:
 			
 		
 func _physics_process(delta: float) -> void:
+
+	
 	contact_monitor=true
 	max_contacts_reported=4
 	if düşme==false:

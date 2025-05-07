@@ -13,24 +13,31 @@ func _ready() -> void:
 	pos=Vector2(550,0)
 	position=pos
 	freeze=true
+	var donma=Counter.düşmez
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 
-	if düşme:
-		if Input.is_action_pressed("soltik"):
-			pos.x=get_global_mouse_position().x
-			position=pos
-			rotation_degrees=rotasyon
-			rotasyon= rotasyon+dönme * delta
-		elif Input.is_action_just_released("soltik"):
-			freeze=false
-			düşme=false
-			dönme=0
+
+	if Counter.düşmez:
+		pass
+	else:
+		if düşme:
+			if Input.is_action_pressed("soltik"):
+				pos.x=get_global_mouse_position().x
+				position=pos
+				rotation_degrees=rotasyon
+				rotasyon= rotasyon+dönme * delta
+			elif Input.is_action_just_released("soltik"):
+				freeze=false
+				düşme=false
+				dönme=0
 			
 		
 func _physics_process(delta: float) -> void:
+
+	
 	contact_monitor=true
 	max_contacts_reported=4
 	if düşme==false:
