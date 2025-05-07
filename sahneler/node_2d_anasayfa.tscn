@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://4tjnhrjpoexd"]
+[gd_scene load_steps=8 format=3 uid="uid://4tjnhrjpoexd"]
 
-[ext_resource type="Script" uid="uid://bcgchrrd542jj" path="res://sahneler/node_2d_anasayfa.gd" id="1_dqsuy"]
+[ext_resource type="Script" uid="uid://bcgchrrd542jj" path="res://sahneler/anasayfa.gd" id="1_dqsuy"]
 [ext_resource type="Texture2D" uid="uid://by4vp1vdf2leu" path="res://resim/arkaplan.jpeg" id="1_w0f5j"]
 [ext_resource type="FontFile" uid="uid://5cukdot7egtp" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_gx2g6"]
 [ext_resource type="Texture2D" uid="uid://c1ufmtcc8dvcq" path="res://resim/antique-wood-plank-texture-background-on-transparent-file-png.webp" id="5_dqsuy"]
+[ext_resource type="Script" uid="uid://cu4bim4hlci3t" path="res://sahneler/oyunbitiş.gd" id="5_hwbm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7kny"]
 size = Vector2(20.9453, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx2g6"]
+size = Vector2(130, 20)
 
 [node name="Node2D-anasayfa" type="Node2D"]
 scale = Vector2(1, 0.99451)
@@ -17,43 +21,43 @@ position = Vector2(576, 323.5)
 scale = Vector2(2.304, 1.92515)
 texture = ExtResource("1_w0f5j")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="duvarlar" type="Node2D" parent="."]
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1046, 347)
+[node name="StaticBody2D3" type="StaticBody2D" parent="duvarlar"]
+position = Vector2(1229, 357.965)
 rotation = 3.14159
 scale = Vector2(0.257078, -4.14306)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="duvarlar/StaticBody2D3"]
 scale = Vector2(-28.7409, -8.11218)
 shape = SubResource("RectangleShape2D_y7kny")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D3/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="duvarlar/StaticBody2D3/CollisionShape2D"]
 scale = Vector2(-0.018, 0.036)
 texture = ExtResource("5_dqsuy")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
-position = Vector2(19, 361)
+[node name="StaticBody2D2" type="StaticBody2D" parent="duvarlar"]
+position = Vector2(-61, 342.882)
 scale = Vector2(0.426332, -3.96465)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="duvarlar/StaticBody2D2"]
 scale = Vector2(22.6118, -8.85229)
 shape = SubResource("RectangleShape2D_y7kny")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D2/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="duvarlar/StaticBody2D2/CollisionShape2D"]
 scale = Vector2(0.012767, -0.0349209)
 texture = ExtResource("5_dqsuy")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-position = Vector2(539, 621)
-scale = Vector2(4.6217, 0.226576)
+[node name="StaticBody2D" type="StaticBody2D" parent="duvarlar"]
+position = Vector2(573, 654.594)
+scale = Vector2(4.98065, 0.226576)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="duvarlar/StaticBody2D"]
 position = Vector2(1.8726, -4.41357)
-scale = Vector2(8.53995, -19.3978)
+scale = Vector2(10.2747, -19.3978)
 shape = SubResource("RectangleShape2D_y7kny")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="duvarlar/StaticBody2D/CollisionShape2D"]
 scale = Vector2(-0.014, -0.035)
 texture = ExtResource("5_dqsuy")
 
@@ -67,3 +71,13 @@ offset_bottom = 142.0
 theme_override_fonts/font = ExtResource("4_gx2g6")
 theme_override_font_sizes/font_size = 50
 text = "puan=0"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_hwbm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(581, 111.613)
+scale = Vector2(8.11668, 1.2197)
+shape = SubResource("RectangleShape2D_gx2g6")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

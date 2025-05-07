@@ -1,5 +1,5 @@
 extends Node2D
-
+var puan = 0
 
 var sayac: int = 0
 

@@ -1,32 +1,21 @@
 extends RigidBody2D
-@onready var mango=preload("res://objeler/kavun2.tscn")
+@onready var mango=preload("res://objeler/mango2.tscn")
 var pos: Vector2 =Vector2.ZERO
-var rotasyon=0
-var düşme=true
-var boyut=40
-var miktar=40
-var dönme=90
+var düşme=false
+const boyut= 320
+var çarpışma=0
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pos=Vector2(550,0)
-	position=pos
-	freeze=true
+	freeze=false
+	var anasayfa = get_tree().current_scene
+	anasayfa.puan += 12500
+	anasayfa.get_node("CanvasLayer/skor").text = "Puan: " + str(anasayfa.puan)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
-	if düşme:
-		if Input.is_action_pressed("soltik"):
-			pos.x=get_global_mouse_position().x
-			position=pos
-			rotation_degrees=rotasyon
-			rotasyon= rotasyon+dönme * delta
-		elif Input.is_action_just_released("soltik"):
-			freeze=false
-			düşme=false
-			dönme=0
+	pass
 			
 		
 func _physics_process(delta: float) -> void:
@@ -34,8 +23,12 @@ func _physics_process(delta: float) -> void:
 	max_contacts_reported=4
 	if düşme==false:
 		var temas_edenler=get_colliding_bodies()
+		if temas_edenler.size()>0:
+			çarpışma=1
+		else: 
+			çarpışma=0
 		for i in temas_edenler:
-			if i is RigidBody2D and i.boyut ==boyut:
+			if i is RigidBody2D and i.boyut == boyut:
 				if self.get_instance_id() > i.get_instance_id():
 					var konum=global_position
 					var yeni_meyve=mango.instantiate()
@@ -43,7 +36,7 @@ func _physics_process(delta: float) -> void:
 					yeni_meyve.position=konum
 					queue_free() 
 					i.queue_free()
-					
-					
+				
+				
 				
 	pass # Replace with function body.

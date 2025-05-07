@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c78n5231ak2w5"]
+
+[ext_resource type="Script" uid="uid://d2fsbq30t27q2" path="res://objeler/limon2.gd" id="1_ktxhc"]
+[ext_resource type="Texture2D" uid="uid://gitihkn56b7g" path="res://resim/limon.png" id="2_w05o1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p5mx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
+script = ExtResource("1_ktxhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie" groups=["meyve"]]
+scale = Vector2(5, -5.142)
+shape = SubResource("CircleShape2D_0p5mx")
+
+[node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
+position = Vector2(-0.443036, 1.20401e-05)
+scale = Vector2(0.055, 0.052)
+texture = ExtResource("2_w05o1")
+
+[connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

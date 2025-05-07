@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkoawhxiqfr66"]
+[gd_scene load_steps=4 format=3 uid="uid://b4huiq16dx0a"]
 
-[ext_resource type="Script" uid="uid://btl00hk7httwn" path="res://objeler/mango2.gd" id="1_2cemv"]
-[ext_resource type="Texture2D" uid="uid://bwyhufjhaxp1a" path="res://resim/pngtree-mango-isolated-single-fruit-png-image_9216660.png" id="2_0p5mx"]
+[ext_resource type="Script" uid="uid://cvwkomxpw41t0" path="res://objeler/nar2.gd" id="1_bllfw"]
+[ext_resource type="Texture2D" uid="uid://nu56evhajqb1" path="res://resim/nar.png" id="1_msldu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17u4c"]
 
@@ -9,16 +9,16 @@
 
 [node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
 scale = Vector2(1.60526, 1.61224)
-script = ExtResource("1_2cemv")
+script = ExtResource("1_bllfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie" groups=["meyve"]]
-scale = Vector2(13, -13.133)
+scale = Vector2(11, -11.114)
 shape = SubResource("CircleShape2D_17u4c")
 
 [node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
-position = Vector2(-2.98023e-08, 0.350823)
+position = Vector2(-1.6944e-08, 1.22788)
 rotation = -3.2306
-scale = Vector2(0.0501507, 0.0660676)
-texture = ExtResource("2_0p5mx")
+scale = Vector2(0.0401902, 0.0414905)
+texture = ExtResource("1_msldu")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

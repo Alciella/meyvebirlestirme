@@ -1,9 +1,10 @@
 extends RigidBody2D
-@onready var portakal=preload("res://objeler/portakal2.tscn")
+@onready var mango=preload("res://objeler/elma2.tscn")
 var pos: Vector2 =Vector2.ZERO
 var rotasyon=0
 var düşme=true
-var boyut=80
+var boyut=40
+var miktar=40
 var dönme=90
 var çarpışma=0
 @export var yeninesne: PackedScene	
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_released("soltik"):
 			freeze=false
 			düşme=false
-			
+			dönme=0
 			
 		
 func _physics_process(delta: float) -> void:
@@ -39,15 +40,15 @@ func _physics_process(delta: float) -> void:
 		else: 
 			çarpışma=0
 		for i in temas_edenler:
-			if i is RigidBody2D and i.boyut == boyut:
+			if i is RigidBody2D and i.boyut ==boyut:
 				if self.get_instance_id() > i.get_instance_id():
 					var konum=global_position
-					var yeni_meyve=portakal.instantiate()
+					var yeni_meyve=mango.instantiate()
 					get_tree().current_scene.add_child(yeni_meyve)
 					yeni_meyve.position=konum
 					queue_free() 
 					i.queue_free()
-				
-				
+					
+					
 				
 	pass # Replace with function body.

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://llyo7mt7bqbb"]
 
-[ext_resource type="Script" uid="uid://c56xl7h7a0v2r" path="res://main_menu.gd" id="1_7mewq"]
+[ext_resource type="Script" uid="uid://c56xl7h7a0v2r" path="res://sahneler/main_menu.gd" id="1_7mewq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mewq"]
 bg_color = Color(0.6, 0.6, 0.027451, 1)
@@ -85,6 +85,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "meyveler nerde"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="enskor" type="Label" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 37.0
+offset_right = 72.0
+offset_bottom = 60.0
+scale = Vector2(1.91429, 1.47)
+text = "en yüksek puan:0"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

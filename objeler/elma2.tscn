@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg2l5cqae2afs"]
+
+[ext_resource type="Script" uid="uid://drmf4myardaio" path="res://objeler/elma2.gd" id="1_50ctc"]
+[ext_resource type="Texture2D" uid="uid://tq4ium7nj06f" path="res://resim/V0bCcZ-download-single-apple-fruit-png.png" id="2_fplcd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmssp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
+scale = Vector2(1.60526, 1.61224)
+script = ExtResource("1_50ctc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie" groups=["meyve"]]
+scale = Vector2(7, -7.072)
+shape = SubResource("CircleShape2D_xmssp")
+
+[node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
+position = Vector2(-1.90735e-06, 1.97964)
+rotation = -3.2306
+scale = Vector2(0.02, 0.023)
+texture = ExtResource("2_fplcd")
+
+[connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

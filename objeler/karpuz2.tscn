@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpqg13ox58e41"]
+[gd_scene load_steps=4 format=3 uid="uid://cfy0dwulsp6vt"]
 
-[ext_resource type="Script" uid="uid://b6a2c0urxmgw1" path="res://objeler/kavun2.gd" id="1_dfaf7"]
-[ext_resource type="Texture2D" uid="uid://bkjuj5gy1uvw7" path="res://resim/kavun.png" id="2_xmssp"]
+[ext_resource type="Script" uid="uid://bljdhv3qktyft" path="res://objeler/karpuz2.gd" id="1_0fy7j"]
+[ext_resource type="Texture2D" uid="uid://7fk8swpvq2g8" path="res://resim/melon.png" id="2_m1k5c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfaf7"]
 
@@ -9,16 +9,16 @@
 
 [node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
 scale = Vector2(1.60526, 1.61224)
-script = ExtResource("1_dfaf7")
+script = ExtResource("1_0fy7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie" groups=["meyve"]]
-scale = Vector2(15, -15.153)
+scale = Vector2(17, -17.174)
 shape = SubResource("CircleShape2D_dfaf7")
 
 [node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
-position = Vector2(1.37705, 0.904821)
+position = Vector2(-0.0519128, 0.102327)
 rotation = -3.2306
-scale = Vector2(0.0258261, 0.0256577)
-texture = ExtResource("2_xmssp")
+scale = Vector2(0.0250948, 0.0243115)
+texture = ExtResource("2_m1k5c")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]
