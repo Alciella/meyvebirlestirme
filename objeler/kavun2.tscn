@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpqg13ox58e41"]
+[gd_scene load_steps=5 format=3 uid="uid://cpqg13ox58e41"]
 
 [ext_resource type="Script" uid="uid://b6a2c0urxmgw1" path="res://objeler/kavun2.gd" id="1_dfaf7"]
 [ext_resource type="Texture2D" uid="uid://bkjuj5gy1uvw7" path="res://resim/kavun.png" id="2_xmssp"]
+[ext_resource type="AudioStream" uid="uid://b20htjph7ybc4" path="res://ses/pop-cartoon-328167.mp3" id="3_xmssp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfaf7"]
 
@@ -20,5 +21,8 @@ position = Vector2(1.37705, 0.904821)
 rotation = -3.2306
 scale = Vector2(0.0258261, 0.0256577)
 texture = ExtResource("2_xmssp")
+
+[node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
+stream = ExtResource("3_xmssp")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

@@ -1,12 +1,10 @@
 extends RigidBody2D
-@onready var birleşme_sesi: AudioStreamPlayer = $birleşmeSesi
-@onready var mango=preload("res://objeler/limon2.tscn")
-@export var nesne_id:int=0
+@onready var nar=preload("res://objeler/nar2.tscn")
 var pos: Vector2 =Vector2.ZERO
 var rotasyon=0
-var dönme=90
 var düşme=true
-const boyut=20
+var boyut=160
+var dönme=90
 var çarpışma=0
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
@@ -18,8 +16,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
-	
 	if düşme:
 		if Input.is_action_pressed("soltik"):
 			pos.x=get_global_mouse_position().x
@@ -29,11 +25,11 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_released("soltik"):
 			freeze=false
 			düşme=false
-			dönme=0
+
+	pass
 			
 		
 func _physics_process(delta: float) -> void:
-
 	
 	contact_monitor=true
 	max_contacts_reported=4
@@ -47,12 +43,12 @@ func _physics_process(delta: float) -> void:
 			if i is RigidBody2D and i.boyut == boyut:
 				if self.get_instance_id() > i.get_instance_id():
 					var konum=global_position
-					var yeni_meyve=mango.instantiate()
+					var yeni_meyve=nar.instantiate()
 					get_tree().current_scene.add_child(yeni_meyve)
 					yeni_meyve.position=konum
 					queue_free() 
 					i.queue_free()
-					
+				
 				
 				
 	pass # Replace with function body.

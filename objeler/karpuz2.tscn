@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfy0dwulsp6vt"]
+[gd_scene load_steps=5 format=3 uid="uid://cfy0dwulsp6vt"]
 
 [ext_resource type="Script" uid="uid://bljdhv3qktyft" path="res://objeler/karpuz2.gd" id="1_0fy7j"]
 [ext_resource type="Texture2D" uid="uid://7fk8swpvq2g8" path="res://resim/melon.png" id="2_m1k5c"]
+[ext_resource type="AudioStream" uid="uid://b20htjph7ybc4" path="res://ses/pop-cartoon-328167.mp3" id="3_m1k5c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfaf7"]
 
@@ -20,5 +21,8 @@ position = Vector2(-0.0519128, 0.102327)
 rotation = -3.2306
 scale = Vector2(0.0250948, 0.0243115)
 texture = ExtResource("2_m1k5c")
+
+[node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
+stream = ExtResource("3_m1k5c")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

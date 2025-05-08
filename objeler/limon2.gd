@@ -8,6 +8,7 @@ var donma=Counter.düşmez
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"birleşmeSesi".play()
 	freeze=false
 	var anasayfa = get_tree().current_scene
 	anasayfa.puan += 100
@@ -16,13 +17,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	
+	
 
 	pass
 			
 		
 func _physics_process(delta: float) -> void:
-	var donma=Counter.düşmez
-	freeze=donma
+
 	
 	contact_monitor=true
 	max_contacts_reported=4

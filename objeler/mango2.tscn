@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkoawhxiqfr66"]
+[gd_scene load_steps=5 format=3 uid="uid://dkoawhxiqfr66"]
 
 [ext_resource type="Script" uid="uid://btl00hk7httwn" path="res://objeler/mango2.gd" id="1_2cemv"]
 [ext_resource type="Texture2D" uid="uid://bwyhufjhaxp1a" path="res://resim/pngtree-mango-isolated-single-fruit-png-image_9216660.png" id="2_0p5mx"]
+[ext_resource type="AudioStream" uid="uid://b20htjph7ybc4" path="res://ses/pop-cartoon-328167.mp3" id="3_0p5mx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17u4c"]
 
@@ -20,5 +21,8 @@ position = Vector2(-2.98023e-08, 0.350823)
 rotation = -3.2306
 scale = Vector2(0.0501507, 0.0660676)
 texture = ExtResource("2_0p5mx")
+
+[node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
+stream = ExtResource("3_0p5mx")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

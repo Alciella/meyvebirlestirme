@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvbmcqw4xdeeq"
+path="res://.godot/imported/Kafkavari çöl tilkisi.mp3-2e1ac675966f804a1ef7319f0c70a8f8.mp3str"
+
+[deps]
+
+source_file="res://ses/Kafkavari çöl tilkisi.mp3"
+dest_files=["res://.godot/imported/Kafkavari çöl tilkisi.mp3-2e1ac675966f804a1ef7319f0c70a8f8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

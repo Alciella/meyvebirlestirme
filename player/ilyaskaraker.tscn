@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn4it2d16qj4m"]
 
 [ext_resource type="Texture2D" uid="uid://by4vp1vdf2leu" path="res://resim/arkaplan.jpeg" id="1_7ppn6"]
-[ext_resource type="Script" uid="uid://j1fy55hq6vdh" path="res://character_body_2d.gd" id="1_dk81k"]
+[ext_resource type="Script" uid="uid://j1fy55hq6vdh" path="res://objeler/character_body_2d.gd" id="1_dk81k"]
 [ext_resource type="Texture2D" uid="uid://djduonb5vymik" path="res://resim/streamergirl.png" id="2_7ppn6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xb6wk"]

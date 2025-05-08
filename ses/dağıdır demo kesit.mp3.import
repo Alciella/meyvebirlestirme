@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg36qle2hhal3"
+path="res://.godot/imported/dağıdır demo kesit.mp3-1f7045e7d2fa313445ab163dbe366505.mp3str"
+
+[deps]
+
+source_file="res://ses/dağıdır demo kesit.mp3"
+dest_files=["res://.godot/imported/dağıdır demo kesit.mp3-1f7045e7d2fa313445ab163dbe366505.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

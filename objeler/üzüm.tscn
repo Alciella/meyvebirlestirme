@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1cqydaicif3o"]
+[gd_scene load_steps=5 format=3 uid="uid://1cqydaicif3o"]
 
 [ext_resource type="Script" uid="uid://bkiiylor8n46f" path="res://objeler/üzüm.gd" id="1_dwjll"]
 [ext_resource type="Texture2D" uid="uid://cxt8j3maj7gou" path="res://resim/bo2Gc6-grape-clipart-png-file.png" id="2_cwky5"]
+[ext_resource type="AudioStream" uid="uid://b20htjph7ybc4" path="res://ses/pop-cartoon-328167.mp3" id="3_cwky5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gm78f"]
 
@@ -20,5 +21,8 @@ shape = SubResource("CircleShape2D_gm78f")
 position = Vector2(-0.443043, -1.35727)
 scale = Vector2(0.116901, 0.112283)
 texture = ExtResource("2_cwky5")
+
+[node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
+stream = ExtResource("3_cwky5")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

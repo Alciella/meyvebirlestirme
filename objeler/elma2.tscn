@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg2l5cqae2afs"]
+[gd_scene load_steps=5 format=3 uid="uid://cg2l5cqae2afs"]
 
 [ext_resource type="Script" uid="uid://drmf4myardaio" path="res://objeler/elma2.gd" id="1_50ctc"]
 [ext_resource type="Texture2D" uid="uid://tq4ium7nj06f" path="res://resim/V0bCcZ-download-single-apple-fruit-png.png" id="2_fplcd"]
+[ext_resource type="AudioStream" uid="uid://b20htjph7ybc4" path="res://ses/pop-cartoon-328167.mp3" id="3_fplcd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmssp"]
 
@@ -20,5 +21,8 @@ position = Vector2(-1.90735e-06, 1.97964)
 rotation = -3.2306
 scale = Vector2(0.02, 0.023)
 texture = ExtResource("2_fplcd")
+
+[node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
+stream = ExtResource("3_fplcd")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]

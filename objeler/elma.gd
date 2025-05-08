@@ -6,7 +6,7 @@ var düşme=true
 var boyut=80
 var dönme=90
 var çarpışma=0
-var donma=Counter.düşmez
+
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,9 +19,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 
-	if Counter.düşmez:
-		pass
-	else:
+
+
+
 		if düşme:
 			if Input.is_action_pressed("soltik"):
 				pos.x=get_global_mouse_position().x

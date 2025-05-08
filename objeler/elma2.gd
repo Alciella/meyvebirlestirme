@@ -4,10 +4,11 @@ var pos: Vector2 =Vector2.ZERO
 var düşme=false
 const boyut= 80
 var çarpışma=0
-var donma=Counter.düşmez
+
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"birleşmeSesi".play()
 	freeze=false
 	var anasayfa = get_tree().current_scene
 	anasayfa.puan += 500
@@ -20,8 +21,7 @@ func _process(delta: float) -> void:
 			
 		
 func _physics_process(delta: float) -> void:
-	var donma=Counter.düşmez
-	freeze=donma
+
 	
 	
 	contact_monitor=true

@@ -13,16 +13,13 @@ func _ready() -> void:
 	pos=Vector2(550,0)
 	position=pos
 	freeze=true
-	var donma=Counter.düşmez
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 
 
-	if Counter.düşmez:
-		pass
-	else:
 		if düşme:
 			if Input.is_action_pressed("soltik"):
 				pos.x=get_global_mouse_position().x
