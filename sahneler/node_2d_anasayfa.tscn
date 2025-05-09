@@ -25,11 +25,12 @@ scale = Vector2(1, 0.99451)
 script = ExtResource("1_dqsuy")
 
 [node name="arkaplan" type="Sprite2D" parent="."]
-position = Vector2(576, 323.5)
-scale = Vector2(2.304, 1.92515)
+position = Vector2(1007, 500.749)
+scale = Vector2(3.97593, 3.15125)
 texture = ExtResource("1_w0f5j")
 
 [node name="duvarlar" type="Node2D" parent="."]
+scale = Vector2(1.72566, 1.63688)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="duvarlar"]
 position = Vector2(1229, 357.965)
@@ -76,11 +77,13 @@ offset_left = 150.0
 offset_top = 19.0
 offset_right = 434.0
 offset_bottom = 142.0
+scale = Vector2(1.72566, 1.64563)
 theme_override_fonts/font = ExtResource("4_gx2g6")
 theme_override_font_sizes/font_size = 50
 text = "puan=0"
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.72566, 1.63688)
 script = ExtResource("5_hwbm0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -94,27 +97,28 @@ scale = Vector2(0.710294, -0.0407232)
 texture = ExtResource("6_6domj")
 
 [node name="exit_button" type="Button" parent="."]
-offset_left = 1004.0
-offset_top = 135.745
-offset_right = 1012.0
-offset_bottom = 143.745
-scale = Vector2(10, 10)
+offset_left = 1710.0
+offset_top = 169.933
+offset_right = 1718.0
+offset_bottom = 177.933
+scale = Vector2(17.2566, 16.3688)
 theme_override_styles/focus = SubResource("StyleBoxTexture_6domj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6domj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6domj")
 theme_override_styles/normal = SubResource("StyleBoxTexture_6domj")
 
 [node name="Control" parent="." instance=ExtResource("6_hwbm0")]
-visible = false
-offset_left = 584.0
-offset_top = 342.882
-offset_right = 584.0
-offset_bottom = 342.882
+offset_left = 1021.0
+offset_top = 499.744
+offset_right = 1021.0
+offset_bottom = 499.744
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1097, 631.467)
+scale = Vector2(1.72566, 1.63688)
 
 [node name="müzik" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1.72566, 1.63688)
 stream = ExtResource("9_3d73w")
 volume_db = -80.0
 autoplay = true
@@ -122,11 +126,10 @@ bus = &"music"
 parameters/looping = true
 
 [node name="bitme" parent="." instance=ExtResource("10_6f4kl")]
-visible = false
-offset_left = 150.0
-offset_top = 19.1049
-offset_right = 150.0
-offset_bottom = 19.1049
+offset_left = 431.0
+offset_top = 233.281
+offset_right = 431.0
+offset_bottom = 233.281
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

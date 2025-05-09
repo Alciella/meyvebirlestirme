@@ -10,7 +10,7 @@ var çarpışma=0
 @export var yeninesne: PackedScene	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pos=Vector2(550,0)
+	pos=Vector2(1000,0)
 	position=pos
 	freeze=true
 	pass # Replace with function body.

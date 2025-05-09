@@ -36,9 +36,9 @@ func _process(delta: float) -> void:
 	
 	if get_global_mouse_position().x<50:
 		Input.warp_mouse(Vector2(50, get_global_mouse_position().y)) 
-	if get_global_mouse_position().x>1100:
+	if get_global_mouse_position().x>1800:
 		Input.warp_mouse(Vector2(1100, get_global_mouse_position().y)) 
-	if get_global_mouse_position().y>600:
+	if get_global_mouse_position().y>2000:
 		Input.warp_mouse(Vector2(get_global_mouse_position().x,600)) 
 		
 	if puan>Counter.puan:
