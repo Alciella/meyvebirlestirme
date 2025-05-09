@@ -4,7 +4,6 @@ var pos: Vector2 =Vector2.ZERO
 var rotasyon=0
 var düşme=true
 var boyut=80
-var dönme=90
 var çarpışma=0
 
 @export var yeninesne: PackedScene	
@@ -26,8 +25,6 @@ func _process(delta: float) -> void:
 			if Input.is_action_pressed("soltik"):
 				pos.x=get_global_mouse_position().x
 				position=pos
-				rotation_degrees=rotasyon
-				rotasyon= rotasyon+dönme * delta
 			elif Input.is_action_just_released("soltik"):
 				freeze=false
 				düşme=false

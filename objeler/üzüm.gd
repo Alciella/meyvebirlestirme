@@ -4,7 +4,6 @@ extends RigidBody2D
 @export var nesne_id:int=0
 var pos: Vector2 =Vector2.ZERO
 var rotasyon=0
-var dönme=90
 var düşme=true
 const boyut=20
 var çarpışma=0
@@ -24,12 +23,9 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("soltik"):
 			pos.x=get_global_mouse_position().x
 			position=pos
-			rotation_degrees=rotasyon
-			rotasyon= rotasyon+dönme * delta
 		elif Input.is_action_just_released("soltik"):
 			freeze=false
 			düşme=false
-			dönme=0
 			
 		
 func _physics_process(delta: float) -> void:

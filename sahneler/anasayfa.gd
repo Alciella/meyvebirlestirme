@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	if puan >5000 and puan<50000:
 		meyveler=[preload("res://objeler/üzüm.tscn"),preload("res://objeler/limon.tscn"),preload("res://objeler/elma.tscn")]
 	if puan >50000:
-		meyveler=[preload("res://objeler/üzüm.tscn"),preload("res://objeler/limon.tscn"),preload("res://objeler/elma.tscn"),preload("res://objeler/portakal.tscn")]
+		meyveler=[preload("res://objeler/üzüm.tscn"),preload("res://objeler/limon.tscn"),preload("res://objeler/elma.tscn"),]
 	
 	
 	
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if puan>Counter.puan:
 		Counter.puan=puan
 	sayaç=sayaç-delta
-	if Input.is_action_just_released("soltik") and sayaç<=0:
+	if Input.is_action_just_pressed("soltik") and sayaç<=0:
 		sayaç=beklemesürei
 		var meyve=meyveler[randi()%meyveler.size()].instantiate()
 		add_child(meyve)
@@ -51,6 +51,8 @@ func _on_exit_button_pressed() -> void:
 	$Control.show()
 	get_tree().paused=true
 	$Control.process_mode=Node.PROCESS_MODE_ALWAYS
+	$Control.set_z_as_relative(false)
+	$Control.z_index = 10000
 	
 func devamla():
 	print("oldu")
