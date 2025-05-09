@@ -1,6 +1,6 @@
 extends Node2D
 var sayaç=0.0
-var beklemesürei=1
+var beklemesürei=0.5
 var count=0
 var puan: int = 0
 
@@ -11,6 +11,7 @@ var puan: int = 0
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$bitme.hide()
 	$Control.hide()
 	devamiste.connect("devam", Callable(self, "devamla"))
 	cıkmakiste.connect("cık", Callable(self, "cıkıldı"))
@@ -18,6 +19,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	Counter.anasayfa_puan = puan
+	
+	
+	
 	if puan >5000 and puan<50000:
 		meyveler=[preload("res://objeler/üzüm.tscn"),preload("res://objeler/limon.tscn"),preload("res://objeler/elma.tscn")]
 	if puan >50000:
@@ -37,7 +42,7 @@ func _process(delta: float) -> void:
 	if puan>Counter.puan:
 		Counter.puan=puan
 	sayaç=sayaç-delta
-	if Input.is_action_just_pressed("soltik") and sayaç<=0:
+	if Input.is_action_just_released("soltik") and sayaç<=0:
 		sayaç=beklemesürei
 		var meyve=meyveler[randi()%meyveler.size()].instantiate()
 		add_child(meyve)

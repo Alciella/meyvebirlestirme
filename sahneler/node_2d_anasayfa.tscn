@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4tjnhrjpoexd"]
+[gd_scene load_steps=14 format=3 uid="uid://4tjnhrjpoexd"]
 
 [ext_resource type="Script" uid="uid://bcgchrrd542jj" path="res://sahneler/anasayfa.gd" id="1_dqsuy"]
 [ext_resource type="Texture2D" uid="uid://by4vp1vdf2leu" path="res://resim/arkaplan.jpeg" id="1_w0f5j"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cg84auysu5jqd" path="res://resim/cross.png" id="6_6gd66"]
 [ext_resource type="PackedScene" uid="uid://dba42u5r715s4" path="res://sahneler/control.tscn" id="6_hwbm0"]
 [ext_resource type="AudioStream" uid="uid://dvbmcqw4xdeeq" path="res://ses/Kafkavari çöl tilkisi.mp3" id="9_3d73w"]
+[ext_resource type="PackedScene" uid="uid://80n7vkb50x0o" path="res://bitme.tscn" id="10_6f4kl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7kny"]
 size = Vector2(20.9453, 20)
@@ -119,6 +120,13 @@ volume_db = -80.0
 autoplay = true
 bus = &"music"
 parameters/looping = true
+
+[node name="bitme" parent="." instance=ExtResource("10_6f4kl")]
+visible = false
+offset_left = 150.0
+offset_top = 19.1049
+offset_right = 150.0
+offset_bottom = 19.1049
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

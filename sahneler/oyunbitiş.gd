@@ -21,6 +21,8 @@ func _on_body_entered(body: Node2D) -> void:
 			await get_tree().create_timer(2).timeout
 			if get_overlapping_bodies().size()>1:
 				print(get_tree())
-				get_tree().change_scene_to_file("res://sahneler/main menu.tscn")
+				$"../bitme".show()
+				get_tree().paused=true
+				$"../bitme".process_mode=Node.PROCESS_MODE_ALWAYS
 		pass
 	pass # Replace with function body.

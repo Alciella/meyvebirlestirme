@@ -3,7 +3,7 @@ var puan = 0
 var düşmez=false
 var sayac: int = 0
 var meyveçarpışma=0
-
+var anasayfa_puan
 func yeni_id() -> int:
 	sayac += 1
 	return sayac
