@@ -11,6 +11,8 @@ var puan: int = 0
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+
 	$bitme.hide()
 	$Control.hide()
 	devamiste.connect("devam", Callable(self, "devamla"))
@@ -72,3 +74,4 @@ func cıkıldı():
 
 
 	get_tree().change_scene_to_file("res://sahneler/main menu.tscn")
+	

@@ -19,6 +19,11 @@ config/icon="uid://bjj6krkl4jy8e"
 
 Counter="*res://sahneler/counter.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [global_group]
 
 meyve=""
