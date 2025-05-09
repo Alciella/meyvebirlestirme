@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://br4ceoekqq6ys"]
+
+[ext_resource type="Script" uid="uid://d4lhwj55j555c" path="res://ses_ayarları.gd" id="1_4bqwb"]
+[ext_resource type="Script" uid="uid://clgq22fk28uin" path="res://ses_kontrol.gd" id="2_8xjes"]
+
+[node name="ses_ayarları" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4bqwb")
+
+[node name="ses_kontrol" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_8xjes")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ses_kontrol"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.187
+anchor_top = 7.662
+anchor_right = 14.187
+anchor_bottom = 7.662
+offset_left = -360.48
+offset_top = -148.48
+offset_right = 360.52
+offset_bottom = 148.52
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="anases_set" type="Label" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ana ses"
+
+[node name="master" type="HSlider" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+
+[node name="muzik_set" type="Label" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Müzik
+"
+
+[node name="music" type="HSlider" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+
+[node name="sfx_set" type="Label" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sfx"
+
+[node name="sfx" type="HSlider" parent="ses_kontrol/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+
+[node name="onayla" type="Button" parent="."]
+layout_mode = 0
+offset_left = 902.0
+offset_top = 494.0
+offset_right = 962.0
+offset_bottom = 525.0
+text = "onayla"
+
+[connection signal="mouse_exited" from="ses_kontrol/VBoxContainer/master" to="ses_kontrol" method="_on_master_mouse_exited"]
+[connection signal="mouse_exited" from="ses_kontrol/VBoxContainer/music" to="ses_kontrol" method="_on_music_mouse_exited"]
+[connection signal="mouse_exited" from="ses_kontrol/VBoxContainer/sfx" to="ses_kontrol" method="_on_sfx_mouse_exited"]
+[connection signal="pressed" from="onayla" to="." method="_on_onayla_pressed"]

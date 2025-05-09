@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="oyna" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -54,7 +54,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
 text = "oyna"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="cıkıs" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -63,7 +63,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
 text = "çıkış
 "
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="ayarlar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -103,5 +103,6 @@ volume_db = -21.016
 autoplay = true
 parameters/looping = false
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/oyna" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/cıkıs" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ayarlar" to="." method="_on_ayarlar_pressed"]
