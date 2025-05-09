@@ -24,5 +24,6 @@ texture = ExtResource("2_m1k5c")
 
 [node name="birleşmeSesi" type="AudioStreamPlayer" parent="RigidBody2D-tribbie"]
 stream = ExtResource("3_m1k5c")
+bus = &"sfx"
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]
