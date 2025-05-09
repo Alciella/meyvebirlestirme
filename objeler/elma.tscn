@@ -9,6 +9,7 @@
 
 [node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
 position = Vector2(-233, 583)
+mass = 3.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_07kee")

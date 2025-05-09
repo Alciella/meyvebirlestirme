@@ -9,6 +9,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D-tribbie" type="RigidBody2D" parent="."]
+mass = 2.0
 script = ExtResource("1_ktxhc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D-tribbie" groups=["meyve"]]
