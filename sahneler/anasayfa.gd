@@ -52,7 +52,7 @@ func _on_exit_button_pressed() -> void:
 	get_tree().paused=true
 	$Control.process_mode=Node.PROCESS_MODE_ALWAYS
 	$Control.set_z_as_relative(false)
-	$Control.z_index = 10000
+	$Control.z_index = 1000
 	
 func devamla():
 	print("oldu")
