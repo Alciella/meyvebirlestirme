@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyoj4ddoilwqr"]
 
 [ext_resource type="Script" uid="uid://btsvv6yly80sg" path="res://objeler/limon.gd" id="1_rg3e8"]
-[ext_resource type="Texture2D" uid="uid://gitihkn56b7g" path="res://resim/limon.png" id="2_3iy4b"]
+[ext_resource type="Texture2D" uid="uid://bo2acb04ihwkr" path="res://limon.png" id="2_rg3e8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kkb1"]
 
@@ -16,8 +16,8 @@ scale = Vector2(5, -5.142)
 shape = SubResource("CircleShape2D_6kkb1")
 
 [node name="Sprite2D-model" type="Sprite2D" parent="RigidBody2D-tribbie/CollisionShape2D"]
-position = Vector2(-0.443036, 1.20401e-05)
-scale = Vector2(0.055, 0.052)
-texture = ExtResource("2_3iy4b")
+rotation = 3.14159
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_rg3e8")
 
 [connection signal="body_entered" from="RigidBody2D-tribbie" to="RigidBody2D-tribbie" method="_on_body_entered"]
