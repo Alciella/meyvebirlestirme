@@ -3,6 +3,8 @@ extends Control
 var puan=0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused=false
+	
 	puan=Counter.puan
 	pass # Replace with function body.
 

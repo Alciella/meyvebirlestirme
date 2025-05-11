@@ -1,17 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://llyo7mt7bqbb"]
+[gd_scene load_steps=14 format=3 uid="uid://llyo7mt7bqbb"]
 
 [ext_resource type="Script" uid="uid://c56xl7h7a0v2r" path="res://sahneler/main_menu.gd" id="1_7mewq"]
+[ext_resource type="Texture2D" uid="uid://dmigu768y8uib" path="res://resim/meyveyağmuru.jpg" id="2_0eh5m"]
 [ext_resource type="AudioStream" uid="uid://bg36qle2hhal3" path="res://ses/dağıdır demo kesit.mp3" id="2_wllcu"]
+[ext_resource type="Texture2D" uid="uid://dmoqyaeaoeu0t" path="res://asset/2d assets/5/1.png" id="5_g1kqn"]
+[ext_resource type="FontFile" uid="uid://5cukdot7egtp" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_ff2gj"]
+[ext_resource type="Texture2D" uid="uid://xqwadlfoj3so" path="res://asset/2d assets/5/5.png" id="7_ff2gj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mewq"]
-bg_color = Color(0.6, 0.6, 0.027451, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jaodc"]
+texture = ExtResource("2_0eh5m")
+modulate_color = Color(0.244776, 0.244776, 0.244776, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tb1q"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ff2gj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ff2gj"]
+texture = ExtResource("7_ff2gj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4dm5"]
+texture = ExtResource("5_g1kqn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s1nd"]
+texture = ExtResource("5_g1kqn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dg2t4"]
+texture = ExtResource("7_ff2gj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0eh5m"]
+texture = ExtResource("5_g1kqn")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,63 +44,75 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7mewq")
+theme_override_styles/panel = SubResource("StyleBoxTexture_jaodc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -107.5
-offset_right = 216.0
-offset_bottom = 107.5
+offset_left = -177.0
+offset_top = -75.0
+offset_right = 177.0
+offset_bottom = 375.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="oyna" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
-text = "oyna"
+theme_override_colors/font_color = Color(0.607843, 0.447059, 0.333333, 1)
+theme_override_fonts/font = ExtResource("6_ff2gj")
+theme_override_font_sizes/font_size = 85
+theme_override_icons/icon = SubResource("CompressedTexture2D_ff2gj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ff2gj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b4dm5")
+text = " play"
+icon_alignment = 1
 
 [node name="cıkıs" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
-text = "çıkış
-"
+theme_override_colors/font_color = Color(0.607843, 0.447059, 0.333333, 1)
+theme_override_fonts/font = ExtResource("6_ff2gj")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/normal = SubResource("StyleBoxTexture_1s1nd")
+text = "exit"
 
 [node name="ayarlar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
-text = "Ayarlar"
+theme_override_colors/font_color = Color(0.609456, 0.445454, 0.33482, 1)
+theme_override_fonts/font = ExtResource("6_ff2gj")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/hover = SubResource("StyleBoxTexture_dg2t4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0eh5m")
+text = "Settings"
 
-[node name="Label" type="Label" parent="."]
+[node name="oyunismi" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -188.0
-offset_right = 66.0
-offset_bottom = -165.0
+offset_left = -329.0
+offset_top = -523.0
+offset_right = 322.0
+offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "meyveler nerde"
+theme_override_colors/font_color = Color(0.403554, 0.335055, 0.186815, 1)
+theme_override_fonts/font = ExtResource("6_ff2gj")
+theme_override_font_sizes/font_size = 115
+text = "MEYVE
+YAĞMURU"
+horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

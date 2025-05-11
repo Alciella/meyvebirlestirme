@@ -1,28 +1,27 @@
 extends Area2D
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+var izlenen_meyve: RigidBody2D = null
+var zaman_damgasi: int = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	pass
+func _on_body_entered(body: Node) -> void:
+	if body is RigidBody2D:
+		print("Meyve girdi:", body.name)
+		izlenen_meyve = body
+		zaman_damgasi = Time.get_ticks_msec()
+		await get_tree().create_timer(1.0).timeout
+		_kontrol_et_ve_bitir()
+		
+func _on_body_exited(body: Node) -> void:
+	if body == izlenen_meyve:
+		print("Meyve çıktı:", body.name)
+		izlenen_meyve = null  # Takibi bırak
 
-
-func _on_body_entered(body: Node2D) -> void:
-	print("girdi")
-	var girenler=get_overlapping_bodies()
-	if girenler.size()==1 and girenler[0] is StaticBody2D:
-		return 
-	for i in girenler:
-			
-		if girenler.size()>=1:
-			await get_tree().create_timer(2).timeout
-			if get_overlapping_bodies().size()>1:
-				print(get_tree())
-				$"../bitme".show()
-				get_tree().paused=true
-				$"../bitme".process_mode=Node.PROCESS_MODE_ALWAYS
-		pass
-	pass # Replace with function body.
+func _kontrol_et_ve_bitir():
+	if izlenen_meyve != null:
+		var icerdekiler = get_overlapping_bodies()
+		if icerdekiler.has(izlenen_meyve):
+			print("Oyun bitti! Meyve 1 saniye içeride kaldı.")
+			$"../bitme".show()
+			get_tree().paused = true
+		else:
+			print("Meyve artık içeride değil, oyun bitmedi.")

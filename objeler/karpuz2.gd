@@ -17,14 +17,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
-
-	pass
 	contact_monitor=true
 	max_contacts_reported=4
-	if düşme==false:
-		var temas_edenler=get_colliding_bodies()
+	var temas_edenler=get_colliding_bodies()
 	if temas_edenler.size()>0:
 		çarpışma=1
 	else: 

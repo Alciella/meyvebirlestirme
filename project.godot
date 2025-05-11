@@ -13,18 +13,20 @@ config_version=5
 config/name="2dilyas"
 run/main_scene="uid://llyo7mt7bqbb"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/show_image=false
 config/icon="uid://bjj6krkl4jy8e"
 
 [autoload]
 
-Counter="*res://sahneler/counter.gd"
+Counter="*res://sahneler/sayaç.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1020
+window/size/viewport_width=720
+window/size/viewport_height=1280
 window/size/mode=3
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [global_group]
 
@@ -66,3 +68,4 @@ esc={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

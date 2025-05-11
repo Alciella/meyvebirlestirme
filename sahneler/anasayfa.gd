@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	Counter.anasayfa_puan = puan
 	
 	
-	
 	if puan >5000 and puan<50000:
 		meyveler=[preload("res://objeler/üzüm.tscn"),preload("res://objeler/limon.tscn"),preload("res://objeler/elma.tscn")]
 	if puan >50000:
@@ -34,12 +33,6 @@ func _process(delta: float) -> void:
 	
 	
 	
-	if get_global_mouse_position().x<50:
-		Input.warp_mouse(Vector2(50, get_global_mouse_position().y)) 
-	if get_global_mouse_position().x>1800:
-		Input.warp_mouse(Vector2(1100, get_global_mouse_position().y)) 
-	if get_global_mouse_position().y>2000:
-		Input.warp_mouse(Vector2(get_global_mouse_position().x,600)) 
 		
 	if puan>Counter.puan:
 		Counter.puan=puan
